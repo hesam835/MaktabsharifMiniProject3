@@ -10,7 +10,7 @@ for html_file in html_file_path:
     result = None
     with open(html_file, "r+") as f:
         content = f.read()
-        result = re.sub(img_pattern, r'<img src="Icons\/\1\2.png">', content)
+        result = re.sub(img_pattern, r'<img src="Icons/\1\2.png">', content)
         f.truncate(0)
         f.write(result)
 
