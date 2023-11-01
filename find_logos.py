@@ -1,12 +1,18 @@
 from pathlib import Path
 
-directory_path = Path("/Users/alora/Maktab/sending projects/hw7/untitled folder/MaktabsharifMiniProject3/front/images")
+def sort_file(path : Path, pattern):
+    return sorted(path.glob(pattern))
+
+directory_path = Path("front/images")
+pattern = "*.png"
+sort_file(directory_path, pattern)
 
 file_pattern = "*-icon.png"
 second_file_pattern = "*-icon-1.png"
+matched_files = ""
 
 matching_files = directory_path.glob(file_pattern)
-matched_files = ""
+
 for file_path in matching_files:
     matched_files += f"{str(file_path)}\n"
 
